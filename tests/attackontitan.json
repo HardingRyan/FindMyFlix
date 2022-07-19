@@ -1,0 +1,114 @@
+{
+    "results":[
+       {
+          "name":"Attack on Titan",
+          "relevance":356.26,
+          "type":"movie",
+          "id":136801,
+          "year":2015,
+          "result_type":"title",
+          "tmdb_id":295830,
+          "tmdb_type":"movie",
+          "image_url":"https://cdn.watchmode.com/posters/0136801_poster_w185.jpg"
+       },
+       {
+          "name":"Attack on Titan",
+          "relevance":355.79,
+          "type":"tv_series",
+          "id":39812,
+          "year":2013,
+          "result_type":"title",
+          "tmdb_id":1429,
+          "tmdb_type":"tv",
+          "image_url":"https://cdn.watchmode.com/posters/039812_poster_w185.jpg"
+       },
+       {
+          "name":"Attack on Titan",
+          "relevance":240.47,
+          "type":"movie",
+          "id":1507282,
+          "year":"None",
+          "result_type":"title",
+          "tmdb_id":557692,
+          "tmdb_type":"movie",
+          "image_url":"https://cdn.watchmode.com/posters/01507282_poster_w185.jpg"
+       },
+       {
+          "name":"Attack on Titan: Chronicle",
+          "relevance":196.68,
+          "type":"movie",
+          "id":1615994,
+          "year":2020,
+          "result_type":"title",
+          "tmdb_id":714194,
+          "tmdb_type":"movie",
+          "image_url":"https://cdn.watchmode.com/posters/01615994_poster_w185.jpg"
+       },
+       {
+          "name":"Attack on Titan: The Roar of Awakening",
+          "relevance":195.5,
+          "type":"movie",
+          "id":1145343,
+          "year":2018,
+          "result_type":"title",
+          "tmdb_id":492999,
+          "tmdb_type":"movie",
+          "image_url":"https://cdn.watchmode.com/posters/01145343_poster_w185.jpg"
+       },
+       {
+          "name":"Attack on Titan: Wings of Freedom",
+          "relevance":194.04,
+          "type":"movie",
+          "id":136803,
+          "year":2015,
+          "result_type":"title",
+          "tmdb_id":330081,
+          "tmdb_type":"movie",
+          "image_url":"https://cdn.watchmode.com/posters/0136803_poster_w185.jpg"
+       },
+       {
+          "name":"Attack on Titan: Junior High",
+          "relevance":187.14,
+          "type":"tv_series",
+          "id":39814,
+          "year":2015,
+          "result_type":"title",
+          "tmdb_id":63510,
+          "tmdb_type":"tv",
+          "image_url":"https://cdn.watchmode.com/posters/039814_poster_w185.jpg"
+       },
+       {
+          "name":"Attack on Titan II: End of the World",
+          "relevance":166.29,
+          "type":"movie",
+          "id":136802,
+          "year":2015,
+          "result_type":"title",
+          "tmdb_id":340382,
+          "tmdb_type":"movie",
+          "image_url":"https://cdn.watchmode.com/posters/0136802_poster_w185.jpg"
+       },
+       {
+          "name":"Attack on Titan: Crimson Bow and Arrow",
+          "relevance":163.52,
+          "type":"movie",
+          "id":136800,
+          "year":2014,
+          "result_type":"title",
+          "tmdb_id":379088,
+          "tmdb_type":"movie",
+          "image_url":"https://cdn.watchmode.com/posters/0136800_poster_w185.jpg"
+       },
+       {
+          "name":"Attack on Titan: Counter Rockets",
+          "relevance":108.94,
+          "type":"tv_miniseries",
+          "id":535638,
+          "year":2015,
+          "result_type":"title",
+          "tmdb_id":65242,
+          "tmdb_type":"tv",
+          "image_url":"https://cdn.watchmode.com/posters/0535638_poster_w185.jpg"
+       }
+    ]
+ }
