@@ -2,15 +2,11 @@ import requests
 from PIL import Image, ImageTk
 from io import BytesIO
 
-
+# Helper class used to organize information related to a specific search result.
 class ResultCard:
     def __init__(self, title, type, year, img_url, id) -> None:
         self.title = title
         self.id = id
-        
-        #TODO maybe see if it is possible to make enum for types?
-        #or an algo to maybe parse the raw types into theses versions idk
-        # https://stackoverflow.com/questions/1398022/looping-over-all-member-variables-of-a-class-in-python
         if not type or type == "":
             self.type = "UNKNOWN TYPE"
         elif type == "tv_series":
@@ -32,7 +28,6 @@ class ResultCard:
             img_result = ImageTk.PhotoImage(Image.open(BytesIO(img_data)))
             self.img = img_result
 
-        
-    
+    # Debugging Helper Method
     def print(self):
         print(self.name)

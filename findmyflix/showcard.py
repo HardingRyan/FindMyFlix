@@ -2,22 +2,27 @@ import requests
 import json
 from PIL import Image, ImageTk
 from io import BytesIO
-#import config
+import config
 
+# Helper class used to organize information for detailed view of a result
 class ShowCard:
     def __init__(self, id, title, image, type):
-        # req = "https://api.watchmode.com/v1/title/" + str(id) + "/details/?apiKey=" + config.key + "&append_to_response=sources"
-        # result = requests.get(req)
-        # j= json.loads(result.text)
-        # print(j)
+        # Make request and save result
+        req = "https://api.watchmode.com/v1/title/" + str(id) + "/details/?apiKey=" +\
+               config.key + "&append_to_response=sources"
+        result = requests.get(req)
+        j = json.loads(result.text)
+        
+       ### Uncomment below and comment above for debugging/testing ###
+	   ### Uses breakingbadshow.json as offline detail test data to avoid request spam ###
 
-        ### UNCOMMENT FOR DEBUGGING, COMMENT ABOVE ###
-        j = json.load(open(r'tests\breakingbadshow.json'))
+        # j = json.load(open(r'tests\breakingbadshow.json'))
         
         self.title = title
-        #TODO maybe figure out how to resize the image to 233x350?
         self.img = image
         self.type = type
+
+        # Parse json object for detailed information
         self.blurb = "Blurb not available" if not j['plot_overview'] else j['plot_overview']
         self.release_year = type + ": " 
         self.release_year += "N/A" if not j['year'] or j['year'] == "" else str(j['year'])
@@ -32,6 +37,7 @@ class ShowCard:
         self.age_rating = "N/A" if not j['us_rating'] or j['us_rating'] == "" else j['us_rating']
         self.trailer_link = "N/A" if not j['trailer'] or j['trailer'] == "" else j['trailer']
         
+        # Collect sources for this show
         self.sources = []
         source_ids = []
         for source in j['sources']:
@@ -46,7 +52,7 @@ class Source:
         self.img = img_result
         self.url = "N/A" if not s_json['web_url'] or s_json['web_url'] == "" else s_json['web_url']
 
-# Local file of all supported streaming sources
+# Local file of all supported streaming sources, do not change
 sources = json.load(open(r'tests\sources.json'))
 
 # Binary searches sources.json for logo URL corresponding with ID
