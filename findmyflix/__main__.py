@@ -29,7 +29,7 @@ root.configure(bg='#000')
 
 # Constants & Globals
 font_family = "Segoe UI"
-project_link = "https://rnharding.com/" #TODO correct this once post is made
+project_link = "https://rnharding.com/blog/findmyflix/"
 global images
 images = []
 boxes = []
