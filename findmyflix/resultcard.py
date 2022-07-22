@@ -1,3 +1,11 @@
+# --------------------FINDMYFLIX--------------------
+#
+# Developed by Ryan Harding 2022
+# Released under GNU Public License (GPL)
+# Contact: rn.hardingg@utexas.edu, rnharding.com
+#
+#---------------------------------------------------
+
 import requests
 from PIL import Image, ImageTk
 from io import BytesIO
