@@ -6,6 +6,8 @@ This document contains more detailed information about FindMyFlix, technical exp
 
 FindMyFlix is a streaming service availability and media information platform. This service has only been tested on Windows systems. By searching all or part of a title, the service will automatically generate results of every relevant show stored in the database, providing as much information as possible. The backbone of this application is built with the [Watchmode](https://www.watchmode.com/) platform. Watchmode's information is consistently updated to include past, present, and even near future releases.
 
+On first launch, if your computer has a firewall or security software, it might prompt saying that FindMyFlix.exe does not have a valid digital signature, and it will block the program from running and mark it as potentially dangerous. To get around this, select the option which is most equivalent to "always allow," and then restart the application in order to allow it to work. There is no dangerous or malicious component of this application; the code is open source in this repository, and please reach out to me by email if you have any related questions.
+
 ## For Developers
 
 The following is a breakdown of unique files/folders, as well as their usage/significance:
