@@ -6,6 +6,7 @@
 #
 #---------------------------------------------------
 
+import os, sys
 import json
 import requests
 import urllib.parse
@@ -22,7 +23,8 @@ from tkHyperlinkManager import HyperlinkManager
 # Configure root application
 root = Tk()
 root.title('FindMyFlix')
-root.iconbitmap('assets\logo.ico')
+assets_path = resource_path("assets")
+root.iconbitmap(assets_path + "\logo.ico")
 root.geometry('1050x700')
 root.minsize(1050, 700)
 root.configure(bg='#000')
@@ -33,7 +35,7 @@ project_link = "https://rnharding.com/blog/findmyflix/"
 global images
 images = []
 boxes = []
-temp_img = Image.open('assets/mfbackground.jpg')
+temp_img = Image.open(assets_path + "\mfbackground.jpg")
 temp_img_copy = temp_img.copy()
 background_image = ImageTk.PhotoImage(temp_img)
 style=ttk.Style()
@@ -41,6 +43,16 @@ style.theme_use('clam')
 style.configure('Horizontal.TProgressbar', background='#802223', bd=0)
 style.configure('Vertical.TScrollbar', background="#802223", arrowsize=40, gripcount=0,
 				 borderwidth=0, relief='groove', troughcolor='#000')
+
+def resource_path(relative_path):
+    """ Get absolute path to resource, works for dev and for PyInstaller """
+    try:
+        # PyInstaller creates a temp folder and stores path in _MEIPASS
+        base_path = sys._MEIPASS
+    except Exception:
+        base_path = os.path.abspath(".")
+
+    return os.path.join(base_path, relative_path)
 
 # Dynamically positions all elements based on current window size
 def resize(e):

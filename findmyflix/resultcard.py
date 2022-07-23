@@ -9,6 +9,7 @@
 import requests
 from PIL import Image, ImageTk
 from io import BytesIO
+import os, sys
 
 # Helper class used to organize information related to a specific search result.
 class ResultCard:
@@ -29,7 +30,8 @@ class ResultCard:
         self.year = "UNKNOWN YEAR" if not year or year == "" else year
 
         if not img_url or img_url == "https://cdn.watchmode.com/profiles/":
-            self.img = ImageTk.PhotoImage(Image.open("assets\error.jpg"))
+            assets_path = resource_path("assets")
+            self.img = ImageTk.PhotoImage(Image.open(assets_path + "\error.jpg"))
         else:
             response = requests.get(img_url)
             img_data = response.content
@@ -39,3 +41,13 @@ class ResultCard:
     # Debugging Helper Method
     def print(self):
         print(self.name)
+
+def resource_path(relative_path):
+    """ Get absolute path to resource, works for dev and for PyInstaller """
+    try:
+        # PyInstaller creates a temp folder and stores path in _MEIPASS
+        base_path = sys._MEIPASS
+    except Exception:
+        base_path = os.path.abspath(".")
+
+    return os.path.join(base_path, relative_path)

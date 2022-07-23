@@ -6,6 +6,7 @@
 #
 #---------------------------------------------------
 
+import os, sys
 import requests
 import json
 from PIL import Image, ImageTk
@@ -60,8 +61,19 @@ class Source:
         self.img = img_result
         self.url = "N/A" if not s_json['web_url'] or s_json['web_url'] == "" else s_json['web_url']
 
+def resource_path(relative_path):
+    """ Get absolute path to resource, works for dev and for PyInstaller """
+    try:
+        # PyInstaller creates a temp folder and stores path in _MEIPASS
+        base_path = sys._MEIPASS
+    except Exception:
+        base_path = os.path.abspath(".")
+
+    return os.path.join(base_path, relative_path)
+
 # Local file of all supported streaming sources, do not change
-sources = json.load(open(r'tests\sources.json'))
+sources_path = resource_path("tests")
+sources = json.load(open(sources_path + "\sources.json"))
 
 # Binary searches sources.json for logo URL corresponding with ID
 # Valid sources & links will return correct logo, otherwise returns no_logo.jpg
@@ -78,7 +90,8 @@ def logo_binary_search(tgt):
         else:
             # Found source in sources.json, now need to check logo link
             if not sources[mid]['logo_100px'] or sources[mid]['logo_100px'] == "":
-                no_logo = ImageTk.PhotoImage(Image.open(r'assets\no_logo.jpg'))
+                assets_path = resource_path("assets")
+                no_logo = ImageTk.PhotoImage(Image.open(assets_path + r'\no_logo.jpg'))
                 return no_logo
             else:
                 response = requests.get(sources[mid]['logo_100px'])
