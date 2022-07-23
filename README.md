@@ -1,4 +1,4 @@
-# FindMyFlix - Streaming Availability Service
+# **FindMyFlix - Streaming Availability Service**
 
 This project uses Python, Tkinter, and the WatchMode API to query over 200 streaming services for information regarding various movies and TV shows. The platform is updated daily to ensure real-time data and accurate reporting. Information is presented in an intuitive and easy-to-understand manner.
 
